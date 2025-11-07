@@ -1,0 +1,25 @@
+﻿<Window x:Class="_41_размер.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_41_размер"
+        mc:Ignorable="d"
+        Title="41 Размер (Музафаров)" Height="450" Width="800" FontFamily="Comic Sans MS" Icon="image/icon.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <TextBlock Background="#FFFFCC99"></TextBlock>
+        <Image Grid.Row="0" HorizontalAlignment="Left" Margin="10" Source="image/logo.png"></Image>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Center" Grid.Column="1" Text="41 Размер" VerticalAlignment="Center" FontSize="40"></TextBlock>
+        
+        <Button Name="BackButton" Content="Назад" HorizontalAlignment="Right" Click="BackButton_Click"></Button>
+        
+        <Frame Name="MainFrame" Grid.Row="1" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden">
+        </Frame>
+
+    </Grid>
+</Window>
