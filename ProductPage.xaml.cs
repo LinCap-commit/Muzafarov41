@@ -23,11 +23,11 @@ namespace _41_размер
         public ProductPage()
         {
             InitializeComponent();
+
+            var currentProducts = Muzafarov41Entities.GetContext().Product.ToList();
+            
+            ProductListView.ItemsSource = currentProducts;
         }
 
-        private void GoButton_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MainFrame.Navigate(new AddEditPage());
-        }
     }
 }
