@@ -64,30 +64,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Muzafarov41Model.cs">
+    <Compile Include="AuthPage.xaml.cs">
+      <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MuzafarovModel41.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Muzafarov41Model.tt</DependentUpon>
+      <DependentUpon>MuzafarovModel41.tt</DependentUpon>
     </Compile>
     <Compile Include="Order.cs">
-      <DependentUpon>Muzafarov41Model.tt</DependentUpon>
+      <DependentUpon>MuzafarovModel41.tt</DependentUpon>
     </Compile>
     <Compile Include="OrderProduct.cs">
-      <DependentUpon>Muzafarov41Model.tt</DependentUpon>
+      <DependentUpon>MuzafarovModel41.tt</DependentUpon>
     </Compile>
     <Compile Include="PickUpPoint.cs">
-      <DependentUpon>Muzafarov41Model.tt</DependentUpon>
+      <DependentUpon>MuzafarovModel41.tt</DependentUpon>
     </Compile>
     <Compile Include="Product.cs">
-      <DependentUpon>Muzafarov41Model.tt</DependentUpon>
+      <DependentUpon>MuzafarovModel41.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
-      <DependentUpon>Muzafarov41Model.tt</DependentUpon>
+      <DependentUpon>MuzafarovModel41.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>Muzafarov41Model.tt</DependentUpon>
+      <DependentUpon>MuzafarovModel41.tt</DependentUpon>
     </Compile>
     <Page Include="AddEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,15 +120,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager.cs" />
-    <Compile Include="Muzafarov41Model.Context.cs">
+    <Compile Include="MuzafarovModel41.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Muzafarov41Model.Context.tt</DependentUpon>
+      <DependentUpon>MuzafarovModel41.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Muzafarov41Model.Designer.cs">
+    <Compile Include="MuzafarovModel41.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Muzafarov41Model.edmx</DependentUpon>
+      <DependentUpon>MuzafarovModel41.edmx</DependentUpon>
     </Compile>
     <Compile Include="ProductPage.xaml.cs">
       <DependentUpon>ProductPage.xaml</DependentUpon>
@@ -143,12 +150,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Muzafarov41Model.edmx">
+    <EntityDeploy Include="MuzafarovModel41.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Muzafarov41Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>MuzafarovModel41.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Muzafarov41Model.edmx.diagram">
-      <DependentUpon>Muzafarov41Model.edmx</DependentUpon>
+    <None Include="MuzafarovModel41.edmx.diagram">
+      <DependentUpon>MuzafarovModel41.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -177,19 +184,19 @@
     <Resource Include="image\А112Т4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Muzafarov41Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Muzafarov41Model.Context.cs</LastGenOutput>
-      <DependentUpon>Muzafarov41Model.edmx</DependentUpon>
-    </Content>
-    <Content Include="Muzafarov41Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Muzafarov41Model.edmx</DependentUpon>
-      <LastGenOutput>Muzafarov41Model.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="MuzafarovModel41.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MuzafarovModel41.edmx</DependentUpon>
+      <LastGenOutput>MuzafarovModel41.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MuzafarovModel41.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MuzafarovModel41.edmx</DependentUpon>
+      <LastGenOutput>MuzafarovModel41.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

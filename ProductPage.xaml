@@ -9,7 +9,44 @@
       Title="ProductPage" FontFamily="Comic Sans MS">
 
     <Grid>
-        <ListView Name="ProductListView">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock Name="FIOBox" FontSize="15" Margin="0,0,30,0"/>
+            <TextBlock Name="RoleBox" FontSize="15"/>
+        </StackPanel>
+        
+        <WrapPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <TextBlock Grid.Row="1" HorizontalAlignment="Left" FontSize="20" Name="ProductCountText" Margin="15"></TextBlock>
+            <StackPanel Grid.Row="1" Margin="10" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Name="ProductsLeft" FontSize="20" HorizontalAlignment="Left"></TextBlock>
+                <TextBlock Name="ProductsAll" Margin="10" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Text="Введите название для поиска " TextAlignment="Right" Width="auto" FontSize="15" VerticalAlignment="Center"></TextBlock>
+                <TextBox Name="SearchBox" TextChanged="SearchBox_TextChanged" Width="200" Height="20"></TextBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Text="Выберите фильтр " FontSize="15" Width="auto" VerticalAlignment="Center"></TextBlock>
+                <ComboBox Name="FilterBox" Width="230" SelectionChanged="FilterBox_SelectionChanged" Height="25" FontSize="15" VerticalAlignment="Center">
+                    <TextBlock>Все диапазоны</TextBlock>
+                    <TextBlock>от 0% до 9.99%</TextBlock>
+                    <TextBlock>от 10% до 14.99%</TextBlock>
+                    <TextBlock>15% и более</TextBlock>
+                </ComboBox>
+
+                <StackPanel Grid.Row="1" Margin="20" Orientation="Vertical">
+                    <RadioButton Name="AscendRbut" Content="По возрастанию цены" Click="AscendRbut_Click"></RadioButton>
+                    <RadioButton Name="DescendRBut" Content="По убыванию цены" Click="DescendRBut_Click"></RadioButton>
+                </StackPanel>
+                
+            </StackPanel>
+            
+        </WrapPanel>
+        <ListView Name="ProductListView" Grid.Row="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -40,7 +77,7 @@
                         <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding ProductName}" FontSize="20"></TextBlock>
                         <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ProductDescription, StringFormat=Описание:{0}}" FontSize="20" TextWrapping="Wrap"></TextBlock>
                         <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ProductManufacturer, StringFormat=Производитель: {0}}" FontSize="20"></TextBlock>
-                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding ProductCost, StringFormat={}{0} рублей}" FontSize="20"></TextBlock>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding ProductCost, StringFormat=Цена: {0} рублей}" FontSize="20"></TextBlock>
                         <TextBlock Grid.Row="0" Grid.Column="2" Text="*Скидка" FontSize="20" HorizontalAlignment="Center"></TextBlock>
                         <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding ProductDiscountAmount, StringFormat={}{0}%}" FontSize="25" HorizontalAlignment="Center"/>
                     

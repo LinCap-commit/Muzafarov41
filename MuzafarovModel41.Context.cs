@@ -15,6 +15,11 @@ namespace _41_размер
     
     public partial class Muzafarov41Entities : DbContext
     {
+        public Muzafarov41Entities()
+            : base("name=Muzafarov41Entities")
+        {
+        }
+
         private static Muzafarov41Entities _context;
         public static Muzafarov41Entities GetContext()
         {
@@ -22,11 +27,7 @@ namespace _41_размер
                 _context = new Muzafarov41Entities();
             return _context;
         }
-        public Muzafarov41Entities()
-            : base("name=Muzafarov41Entities")
-        {
-        }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -38,6 +39,5 @@ namespace _41_размер
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<User> User { get; set; }
-
     }
 }
